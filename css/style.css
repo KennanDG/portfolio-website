@@ -1,0 +1,39 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 200 to 1000 */
+
+.nunito-sans-default {
+  font-family: "Nunito Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+body {
+    font-family: "Nunito Sans", monospace, sans-serif;
+    line-height: 1.6;
+    color: #212121;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit;        /* Ensures link color inherits from parent element */
+  font-weight: bold;     /* Makes the text bold */
+  }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
