@@ -80,5 +80,5 @@ body#home-page {
   background-image: url('https://kennandg.github.io/portfolio-website/images/home_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
