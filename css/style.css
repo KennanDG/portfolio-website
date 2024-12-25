@@ -5,6 +5,8 @@
     box-sizing: border-box;
   }
 
+
+/* Fonts */
 .nunito-sans-default {
   font-family: "Nunito Sans", serif;
   font-optical-sizing: auto;
@@ -14,6 +16,13 @@
     "wdth" 100,
     "YTLC" 500;
 }
+
+.audiowide-regular {
+  font-family: "Audiowide", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Global Styles */
 
@@ -25,12 +34,29 @@ body {
     margin: 0;
     padding: 0;
 }
+nav {
+    display: flex;                 /* Use Flexbox */
+    justify-content: space-around; /* Distribute links evenly with equal spacing */
+    align-items: center;           /* Vertically center the links */
+    padding: 40px 0;               /* Add some vertical padding */
+}
 
 a {
-  text-decoration: none; /* Removes underline from links */
+  text-decoration: none; /* Remove the underline */
+  padding: 10px 20px;    /* Add padding for clickable area */
+  transition: color 0.3s ease; /* Smooth hover transition */
   color: inherit;        /* Ensures link color inherits from parent element */
   font-weight: bold;     /* Makes the text bold */
   }
+
+  /* Change link color on hover */
+a:hover {
+    color: #3b87eb; /* Optional: Change color on hover */
+}
+
+nav a {
+  font-size: x-large;
+}
 
 img {
   max-width: 100%;
@@ -42,6 +68,7 @@ img {
 
 h1 {
   text-align: center;
+  font-family: "Audiowide", monospace, sans-serif;
   font-size: 40px;
   line-height: 1.3;
 }
@@ -74,7 +101,7 @@ p {
   color: #575656;
 }
 
-/* background images */
+/* Home Page */
 
 body#home-page {
   background-image: url('https://kennandg.github.io/portfolio-website/images/home_background.jpg');
@@ -82,3 +109,45 @@ body#home-page {
   background-repeat: no-repeat;
   background-position: top;
 }
+
+
+
+/* Media queries 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; 
+    }
+
+    nav a {
+        padding: 10px 0; 
+    }
+} 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
