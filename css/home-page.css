@@ -1,3 +1,5 @@
+/* Home Page */
+
 video#home-page {
   animation: fadeInBottom 1.5s ease-out;
   animation-delay: 1.5s; /* Start the animation slightly later than nav a */
@@ -5,7 +7,6 @@ video#home-page {
   animation-fill-mode: forwards;
 }
 
-/* Home Page */
 
 body#home-page {
   background-image: url('https://kennandg.github.io/portfolio-website/images/home_background.jpg');
@@ -13,3 +14,4 @@ body#home-page {
   background-repeat: no-repeat;
   background-position: top;
 }
+
