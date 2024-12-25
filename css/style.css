@@ -5,9 +5,6 @@
     box-sizing: border-box;
   }
 
-/* <uniquifier>: Use a unique and descriptive class name
- <weight>: Use a value from 200 to 1000 */
-
 .nunito-sans-default {
   font-family: "Nunito Sans", serif;
   font-optical-sizing: auto;
@@ -18,8 +15,11 @@
     "YTLC" 500;
 }
 
+/* Global Styles */
+
 body {
     font-family: "Nunito Sans", monospace, sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     color: #212121;
     background-color: #f4f4f4;
@@ -36,4 +36,50 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+
+/* Header styles */
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Small text */
+.small {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #575656;
+}
+
+/* background images */
+
+body#home-page {
+  background-image: url('../images/home_background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 }
