@@ -63,6 +63,13 @@ img {
   height: auto;
 }
 
+video {
+    display: block;
+    margin: 0 auto; /* Centers the video horizontally */
+    max-width: 100%; /* Makes the video responsive */
+    height: auto;
+}
+
 
 /* Header styles */
 
