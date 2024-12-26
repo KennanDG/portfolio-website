@@ -1,2 +1,2 @@
 # portfolio-website
-Personal Website that displays my accomplishments, CV, and portfolio
+Personal Website built from scratch that displays my accomplishments, CV, and portfolio

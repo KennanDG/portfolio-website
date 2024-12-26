@@ -3,6 +3,9 @@
   text-align: center;
 }
 
+.mt-4 {
+  margin-top: 4rem;
+}
 .mt-16 {
   margin-top: 16rem;
 }
