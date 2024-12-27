@@ -1,84 +1,121 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+@import url('reset.css');
+@import url('fonts.css');
+@import url('global.css');
+@import url('animations.css');
+@import url('components.css');
+@import url('nav.css');
+@import url('home-page.css');
+@import url('about-page.css');
+@import url('utilities.css');
 
-.nunito-sans-default {
-  font-family: "Nunito Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
 
-/* Global Styles */
-
-body {
-    font-family: "Nunito Sans", monospace, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #212121;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-  text-decoration: none; /* Removes underline from links */
-  color: inherit;        /* Ensures link color inherits from parent element */
-  font-weight: bold;     /* Makes the text bold */
-  }
-
-img {
-  max-width: 100%;
-  height: auto;
+/* Cards Container */
+.preview-cards {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 80px; /* Space between the cards */
+    padding: 40px 20px;
 }
 
 
-/* Header styles */
-
-h1 {
-  text-align: center;
-  font-size: 40px;
-  line-height: 1.3;
+/* Individual Cards */
+.card {
+    animation-delay: 1.5s;
+    animation: fadeInBottom 1.5s ease-out;
+    background: #eec8c8;
+    border: 1px solid #f4aaaad1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h2 {
-  font-size: 32px;
-  line-height: 1.3;
+/* Card Hover Effects */
+.card:hover {
+    transform: translateY(-10px); /* Lift the card */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-  font-size: 28px;
-  line-height: 1.4;
+/* Card Image */
+.card img {
+    width: 100%;
+    height: 400px;
+    border-bottom: 1px solid #f4aaaad1;
+    transition: transform 0.3s ease;
 }
 
-h4 {
-  font-size: 24px;
-  line-height: 1.4;
+.card:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
 }
 
-/* Paragraphs */
-p {
-  font-size: 16px;
-  line-height: 1.6;
+.card:hover video {
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: transform 0.3s ease;
 }
 
-/* Small text */
-.small {
-  font-size: 14px;
-  line-height: 1.4;
-  color: #575656;
+/* Card Video Container */
+.video-container {
+    width: 100%;
+    height: 400px; /* Set a fixed height for consistency */
+    overflow: hidden; /* Ensures no extra content overflows */
+    border-bottom: 1px solid #f4aaaad1; 
 }
 
-/* background images */
-
-body#home-page {
-  background-image: url('https://kennandg.github.io/portfolio-website/images/home_background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+.video-container video {
+    width: 100%; /* Make the video stretch to fit the width */
+    height: 100%; /* Make it fill the container height */
+    object-fit: cover; /* Ensures the video maintains its aspect ratio while covering the container */
 }
+
+/* Card Text */
+.card h3 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+}
+
+
+.card p {
+    font-size: 1rem;
+    margin: 0 20px 20px;
+    color: #5a5a5a;
+}
+
+/* Button inside Card */
+.card .btn {
+    display: inline-block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #f56a6a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.card .btn:hover {
+    background-color: #b54d4d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
