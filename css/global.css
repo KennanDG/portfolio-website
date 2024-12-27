@@ -1,6 +1,10 @@
 /* Global Styles */
 
 body {
+  background-image: url('https://kennandg.github.io/portfolio-website/images/home_background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
   font-family: "Nunito Sans", monospace, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -26,7 +30,7 @@ a {
   /* Change link color on hover */
 a:hover {
   transform: scale(1.1);  
-  color: #3b87eb; /* Optional: Change color on hover */
+  color: #f56a6a; 
 }
 
 nav a {

@@ -12,7 +12,7 @@
     </head>
 
 
-    <body id="home-page" class="text-center">
+    <body class="text-center">
         <header>
             <h1 id="home-page">The Greatest Site Ever</h1>
             <nav class="mb-4">
@@ -23,14 +23,36 @@
             </nav>
         </header>
 
-        <section>
-            <div>
-                
+        <section class="preview-cards mb-4">
+            <div class="card">
+                <img src="images/about_me_card.jpg" alt="About Me">
+                <h3>About Me</h3>
+                <p>Learn more about my past, present, and future.</p>
+                <a href="about.html" class="btn">Learn More</a>
+            </div>
+
+            <div class="card">
+                <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="videos/game_of_life.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h3>Projects</h3>
+                <p>Check out what I've been working on.</p>
+                <a href="projects.html" class="btn">View Projects</a>
+            </div>
+
+            <div class="card">
+                <img src="images/contact_me_card.jpg" alt="Contact Me">
+                <h3>Contact</h3>
+                <p>Looking for help? Reach out to me and you won't regret it!</p>
+                <a href="contact.html" class="btn">Contact Me</a>
             </div>
         </section>
         
         <div> 
-            <h2 class="text-center mb-4">Guild Wars 2</h2>
+            <h2 class="text-center mb-4">Guild Masters</h2>
             <video id="home-page" controls width="800">
                 <source src="videos/4.15 Final Video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
