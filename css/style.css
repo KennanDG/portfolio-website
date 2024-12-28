@@ -35,7 +35,7 @@
 
 /* Card Hover Effects */
 .card:hover {
-    transform: translateY(-10px); /* Lift the card */
+    animation: bounce 0.8s ease-in-out infinite; /* Apply bounce animation */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
