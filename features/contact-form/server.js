@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 // Contact Form Route
 app.post('/features/contact-form/contact', async (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, phone, email, message } = req.body;
 
     // Basic email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,6 +46,7 @@ app.post('/features/contact-form/contact', async (req, res) => {
         subject: `Message from ${name}`,
         text: `You have a new message from:
         Name: ${name}
+        Phone: ${phone}
         Email: ${email}
         Message: ${message}
         

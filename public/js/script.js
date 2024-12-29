@@ -86,10 +86,25 @@ textarea.addEventListener('input', () => {
 });
 
 
+/*
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////// Contact-form phone number validation ////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+*/
 
+const phoneInput = document.getElementById('phone');
+const phoneError = document.getElementById('phone-error');
 
+phoneInput.addEventListener('input', () => {
+  const pattern = /^[+]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/; // Same regex as in the HTML
 
-
+  if (phoneInput.value && !pattern.test(phoneInput.value)) {
+    phoneError.style.display = 'block';
+    phoneError.textContent = 'Invalid phone number format';
+  } else {
+    phoneError.style.display = 'none';
+  }
+});
 
 
 

@@ -41,7 +41,14 @@ form#contact-form textarea {
   border-radius: 10px;
   font-size: 1rem;
   outline: none;
-  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+form#contact-form input:focus,
+form#contact-form textarea:focus {
+  transform: scale(1.02);
+  border-color: #f56a6a;
+  box-shadow: 0 0 8px #f56a6a;
 }
 
 form#contact-form textarea {
@@ -50,12 +57,6 @@ form#contact-form textarea {
   max-height: 400px; 
   min-height: 240px;
   width: 100%; /* Ensure the default width is 100% */
-}
-
-form#contact-form input:focus,
-form#contact-form textarea:focus {
-  border-color: #f56a6a;
-  box-shadow: 0 0 8px #f56a6a;
 }
 
 
@@ -103,5 +104,11 @@ div#response-message {
 }
 
 
-
+/* Error message styling */
+#phone-error {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #bc333e;
+}
 
