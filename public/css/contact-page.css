@@ -2,7 +2,7 @@
 section#contact-section {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     min-height: 64vh;
     /*background: linear-gradient(to right, #7d45ba, #f56a6a); */
     animation: fadeInBottom 1.5s ease-out;
@@ -11,8 +11,51 @@ section#contact-section {
     animation-fill-mode: forwards;
 }
 
+
+/* Container for Form and Hello Message */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap content on smaller screens */
+  border-radius: 1rem;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+/* Hello Message Styling */
+.hello-message {
+  flex: 1; /* Takes up 50% of the container */
+  padding: 1.4rem;
+  background: linear-gradient(to right,  #7d45ba, #f56a6a);
+  border-radius: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hello-message h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hello-message p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+
+.social-icons i {
+  font-size: 4rem;
+}
+
+.social-icons i:hover {
+  animation: bounce 0.8s ease-in-out infinite; /* Apply bounce animation */
+}
+
 /* Form container with shadow and rounded corners */
 .form-container {
+  flex: 1; /* Takes up 50% of the container */
   background: #edd8d8;
   padding: 2rem;
   border-radius: 1rem;
@@ -38,7 +81,7 @@ form#contact-form textarea {
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #d5b4b4;
-  border-radius: 10px;
+  border-radius: 1rem;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease-in-out;
@@ -112,3 +155,8 @@ div#response-message {
   color: #bc333e;
 }
 
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+}
