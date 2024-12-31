@@ -47,7 +47,7 @@
                         <input type="text" id="name" name="name" placeholder="Name" required>
 
                         <label for="phone">Phone:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="^[+]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*$" required>
+                        <input type="tel" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="^\+?[0-9]{1,4}?[-.\s\(\)]*[0-9]+$" required>
                         <!-- If input is an invalid phone number format -->
                         <div id="phone-error" style="color: red; font-size: 0.9rem; display: none;">Invalid phone number format</div>
 
