@@ -23,12 +23,12 @@ form.addEventListener('submit', async (event) => {
 
     try {
         // Send the form data to the server
-        const response = await fetch(form.action, {
-        method: form.method,
+        const response = await fetch('/api/contact-form', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data), // Convert form data to JSON format
         });
 
         const result = await response.json();
@@ -45,7 +45,7 @@ form.addEventListener('submit', async (event) => {
         // Show error message
         responseMessage.style.display = 'block';
         responseMessage.style.color = 'red';
-        responseMessage.textContent = result.message;
+        responseMessage.textContent = result.error || 'Something went wrong.';
         }
     } catch (error) {
         // Handle network errors
