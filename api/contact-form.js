@@ -6,12 +6,12 @@ const nodemailer = require('nodemailer');
 // Export as a serverless function
 module.exports = async (req, res) => {
     if (req.method === 'POST') {
-        const { name, phone, email, message/*, 'g-recaptcha-response': captcha*/ } = req.body;
+        const { name, phone, email, message, 'g-recaptcha-response': captcha } = req.body;
 
         // Validate reCAPTCHA
-        // if (!captcha) {
-        //     return res.status(400).json({ message: 'Please complete the reCAPTCHA' });
-        // }
+        if (!captcha) {
+            return res.status(400).json({ message: 'Please complete the reCAPTCHA' });
+        }
 
         // Basic email format validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -21,20 +21,20 @@ module.exports = async (req, res) => {
 
         try {
             // Verify reCAPTCHA
-            // const response = await axios.post(
-            //     `https://www.google.com/recaptcha/api/siteverify`,
-            //     null,
-            //     {
-            //         params: {
-            //             secret: process.env.RECAPTCHA_SECRET_KEY, // Your secret key
-            //             response: captcha,
-            //         },
-            //     }
-            // );
+            const response = await axios.post(
+                `https://www.google.com/recaptcha/api/siteverify`,
+                null,
+                {
+                    params: {
+                        secret: process.env.RECAPTCHA_SECRET_KEY, // Your secret key
+                        response: captcha,
+                    },
+                }
+            );
 
-            // if (!response.data.success) {
-            //     return res.status(400).json({ message: 'reCAPTCHA verification failed.' });
-            // }
+            if (!response.data.success) {
+                return res.status(400).json({ message: 'reCAPTCHA verification failed.' });
+            }
 
             // Email Transporter Configuration
             const transporter = nodemailer.createTransport({
