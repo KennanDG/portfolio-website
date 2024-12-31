@@ -1,9 +1,0 @@
-/* Home Page */
-
-video#home-page {
-  animation: fadeInBottom 1.5s ease-out;
-  animation-delay: 1.5s; /* Start the animation slightly later than nav a */
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
