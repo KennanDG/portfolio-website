@@ -14,12 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Serve static files from the root-level public directory
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../docs')));
 
 
 // Handle the root route ("/")
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/contact.html'));
+    res.sendFile(path.join(__dirname, '../../docs/contact.html'));
 });
 
 // Contact Form Route
