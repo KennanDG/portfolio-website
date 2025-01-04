@@ -1,0 +1,35 @@
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #eec8c8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 1200px; 
+  width: 100%; 
+  margin: 2rem auto; /* Center the card horizontally  */
+  padding: 2rem;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.project-card img {
+    width: auto;
+    height: 400px;
+    
+    border-bottom: 1px solid #f4aaaad1;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
