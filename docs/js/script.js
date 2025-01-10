@@ -39,8 +39,8 @@ cards.forEach((card, i) => {
   // Add staggered animation for cards not in focus
   gsap.to(card, {
     opacity: 0.5,
-    scale: 0.9,
-    x: 50, // Slight offset to the right for non-focused cards
+    scale: 0.8,
+    x: 100, // Slight offset to the right for non-focused cards
     scrollTrigger: {
       trigger: card,
       start: "top+=100 90%", // Add 100px padding to the start
