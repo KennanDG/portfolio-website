@@ -55,7 +55,7 @@ body#projects-page {
   opacity: 0.5; /* Default semi-transparent for non-focused cards */
   transform: 
     scale(0.7), /* Default size for non-focused cards */
-    translateX(50px); /* Slight offset */
+    translateX(400px); /* Slight offset */
   transition: transform 0.3s ease, opacity 0.3s ease;
   max-width: 900px; 
   width: 100%;
@@ -86,7 +86,7 @@ body#projects-page {
   opacity: 0.5; /* Dimmed */
   transform: 
     scale(0.7) 
-    translateX(50px);
+    translateX(400px);
   z-index: 1; /* Push to the back */
 }
 

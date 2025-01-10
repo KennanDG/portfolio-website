@@ -17,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cards = document.querySelectorAll(".project-card");
 
+
+
 // Loop through each card to set individual ScrollTriggers
 cards.forEach((card, i) => {
   // Main animation for each card
@@ -25,9 +27,10 @@ cards.forEach((card, i) => {
     scale: 1,
     scrollTrigger: {
       trigger: card, // Each card acts as its own trigger
-      start: "top 80%", // Start when the top of the card is 80% down the viewport
-      end: "top 20%", // End when the top of the card reaches 20% of the viewport
+      start: "top+=100 90%", // Add 100px padding to the start
+      end: "top+=100 10%", // Add 100px padding to the end
       scrub: true, // Smooth scrolling animation
+      toggleActions: "play reverse play reverse", // Add/remove class when scrolling in/out
       toggleClass: { targets: card, className: "in-focus" }, // Add 'in-focus' class
       markers: true, // Debugging markers for each card
     },
@@ -40,8 +43,9 @@ cards.forEach((card, i) => {
     x: 50, // Slight offset to the right for non-focused cards
     scrollTrigger: {
       trigger: card,
-      start: "top 80%", // Stagger starts slightly before focus
-      end: "top 20%", // Ends slightly after focus
+      start: "top+=100 90%", // Add 100px padding to the start
+      end: "top+=100 10%", // Ends slightly after focus
+      toggleActions: "play reverse play reverse", // Add/remove class when scrolling in/out
       toggleClass: { targets: card, className: "not-in-focus" }, // Add 'not-in-focus' class
     },
   });
