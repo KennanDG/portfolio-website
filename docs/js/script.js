@@ -15,7 +15,7 @@ footer.textContent = `© ${year} Kennan deAngelo Gauthier`;
 */
 gsap.registerPlugin(ScrollTrigger);
 
-const cards = document.querySelectorAll(".project-card");
+const cards = document.querySelectorAll(".projects-card");
 
 
 
@@ -32,7 +32,7 @@ cards.forEach((card, i) => {
       scrub: true, // Smooth scrolling animation
       toggleActions: "play reverse play reverse", // Add/remove class when scrolling in/out
       toggleClass: { targets: card, className: "in-focus" }, // Add 'in-focus' class
-      markers: true, // Debugging markers for each card
+      // markers: true, // Debugging markers for each card
     },
   });
 
