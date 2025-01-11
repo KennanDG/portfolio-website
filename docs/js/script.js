@@ -6,6 +6,56 @@ const footer = document.querySelector("footer");
 const year = new Date().getFullYear();
 footer.textContent = `© ${year} Kennan deAngelo Gauthier`;
 
+
+
+/*
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////// Project page scroll animation ////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+*/
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = document.querySelectorAll(".projects-card");
+
+
+
+// Loop through each card to set individual ScrollTriggers
+cards.forEach((card, i) => {
+  // Main animation for each card
+  gsap.to(card, {
+    opacity: 1,
+    scale: 1,
+    scrollTrigger: {
+      trigger: card, // Each card acts as its own trigger
+      start: "top+=100 90%", // Add 100px padding to the start
+      end: "top+=100 10%", // Add 100px padding to the end
+      scrub: true, // Smooth scrolling animation
+      toggleActions: "play reverse play reverse", // Add/remove class when scrolling in/out
+      toggleClass: { targets: card, className: "in-focus" }, // Add 'in-focus' class
+      // markers: true, // Debugging markers for each card
+    },
+  });
+
+  // Add staggered animation for cards not in focus
+  gsap.to(card, {
+    opacity: 0.5,
+    scale: 0.8,
+    x: 100, // Slight offset to the right for non-focused cards
+    scrollTrigger: {
+      trigger: card,
+      start: "top+=100 90%", // Add 100px padding to the start
+      end: "top+=100 10%", // Ends slightly after focus
+      toggleActions: "play reverse play reverse", // Add/remove class when scrolling in/out
+      toggleClass: { targets: card, className: "not-in-focus" }, // Add 'not-in-focus' class
+    },
+  });
+});
+
+
+
+
+
+
 /*
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////// Contact-form submission message ////////////////////////
@@ -105,8 +155,6 @@ phoneInput.addEventListener('input', () => {
     phoneError.style.display = 'none';
   }
 });
-
-
 
 
 
