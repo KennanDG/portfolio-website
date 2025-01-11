@@ -1,3 +1,4 @@
+
 /* Home Page */
 
 video#home-page {
@@ -6,6 +7,15 @@ video#home-page {
   opacity: 0;
   animation-fill-mode: forwards;
 }
+
+
+h2#home-page {
+    animation: fadeInBottom 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
 
 /* Cards Container */
 .home-preview-cards {
@@ -21,6 +31,7 @@ video#home-page {
 .home-card {
     animation-delay: 1.5s;
     animation: fadeInBottom 1.5s ease-out;
+    animation-fill-mode: forwards; 
     background: #eec8c8;
     border: 1px solid #f4aaaad1;
     border-radius: 8px;
