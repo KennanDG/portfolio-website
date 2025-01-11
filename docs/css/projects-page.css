@@ -10,6 +10,7 @@ video#projects-page {
 
 h3#projects-page {
     color: #ffffff;
+    margin: 1rem 0;
 }
 
 
@@ -28,16 +29,6 @@ p#projects-page {
   max-width: 900px; 
 }
 
-
-/* Card Video Container */
-/* .projects-video-container {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 0 auto; 
-    object-fit: cover;
-    overflow: hidden; 
-} */
 
 .projects-card {
   background: linear-gradient(to top, #8354f8b4, #c1327a98);
