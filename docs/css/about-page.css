@@ -1,0 +1,25 @@
+h1#about-page {
+    color: darkmagenta;
+}
+
+p#about-page {
+    font-size: 24px;
+}
+
+
+.introduction {
+    animation: fadeInBottom 1.5s ease-out;
+    animation-delay: 1.5s; 
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.introduction p {
+    margin: 1rem 24rem;
+}
+
+
+.introduction img {
+    width: auto;
+    height: 400px;
+}
