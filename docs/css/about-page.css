@@ -32,6 +32,7 @@ p#about-page {
     width: auto;
     height: 400px;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 1rem auto;
 }
 
@@ -49,10 +50,10 @@ p#about-page {
     justify-content: center;
     background: linear-gradient(to top, #8354f8b4, #c1327a98);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 800px;
-    margin: 3rem 0 3rem 24rem;
+    margin: 8rem 0 8rem 24rem; /* Towards center-left of screen */
     animation: fadeInLeft 1.5s ease-out;
     animation-delay: 1.0s; /* Start the animation slightly later than nav a */
     opacity: 0;
@@ -64,10 +65,12 @@ p#about-page {
     color: #ffff;
     margin-bottom: 16px;
     font-size: 32px;
+    transition: transform 0.3s ease;
 }
 
 .skills-grid {
     list-style: circle inside;
+    transition: transform 0.3s ease;
 }
 
 .skills-grid li {
@@ -75,6 +78,78 @@ p#about-page {
     margin-bottom: 12px;
     font-size: 20px;
 }
+
+.skills:hover h2{
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.skills:hover ul{
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+
+/* 
+///////////////////////////////////////////
+/////////////// Hobbies ////////////////////
+///////////////////////////////////////////
+*/
+
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, #8354f8b4, #c1327a98);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 8rem 0 8rem 84rem; /* Towards center-right of screen */
+    animation: fadeInRight 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
+
+.hobbies img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+}
+
+.hobbies h2 {
+    font-family: "Audiowide", monospace, sans-serif;
+    color: #ffff;
+    transition: transform 0.3s ease;
+}
+
+
+.hobbies p {
+    color: #ffff;
+    margin: 0 2rem;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.hobbies:hover p {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.hobbies:hover h2 {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.hobbies:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
 
 
 
