@@ -219,6 +219,7 @@ p#about-page {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
 }
 
 
@@ -249,8 +250,30 @@ p#about-page {
 
 
 
+/* 
+///////////////////////////////////////////
+/////////////// Get in Touch //////////////
+///////////////////////////////////////////
+*/
 
 
+.call-to-action p {
+    font-size: 20px;
+    margin: 1rem auto;
+}
+
+
+.call-to-action .btn {
+    display: inline-block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #f56a6a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
 
 

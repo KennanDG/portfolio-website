@@ -24,14 +24,15 @@ h2#home-page {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 80px; /* Space between the cards */
     padding: 40px 20px;
+    animation-delay: 1.5s;
+    animation: fadeInBottom 1.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards; 
 }
 
 
 /* Individual Cards */
 .home-card {
-    animation-delay: 1.5s;
-    animation: fadeInBottom 1.5s ease-out;
-    animation-fill-mode: forwards; 
     background: #eec8c8;
     border: 1px solid #f4aaaad1;
     border-radius: 8px;
