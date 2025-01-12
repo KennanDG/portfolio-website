@@ -1,3 +1,4 @@
+
 /* Home Page */
 
 video#home-page {
@@ -7,6 +8,15 @@ video#home-page {
   animation-fill-mode: forwards;
 }
 
+
+h2#home-page {
+    animation: fadeInBottom 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
+
 /* Cards Container */
 .home-preview-cards {
     display: flex;
@@ -14,13 +24,15 @@ video#home-page {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 80px; /* Space between the cards */
     padding: 40px 20px;
+    animation-delay: 1.5s;
+    animation: fadeInBottom 1.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards; 
 }
 
 
 /* Individual Cards */
 .home-card {
-    animation-delay: 1.5s;
-    animation: fadeInBottom 1.5s ease-out;
     background: #eec8c8;
     border: 1px solid #f4aaaad1;
     border-radius: 8px;

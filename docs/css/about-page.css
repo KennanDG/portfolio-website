@@ -1,0 +1,284 @@
+body#about-page {
+  background-attachment: fixed; /* Keeps the background image in place */
+}
+
+
+p#about-page {
+    font-size: 24px;
+}
+
+/* 
+///////////////////////////////////////////
+/////////////// Introduction //////////////
+///////////////////////////////////////////
+*/
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInBottom 1.5s ease-out;
+    animation-delay: 1.5s; 
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.introduction p {
+    margin: 1rem 24rem;
+}
+
+
+.introduction img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+}
+
+
+/* 
+///////////////////////////////////////////
+/////////////// Skills ////////////////////
+///////////////////////////////////////////
+*/
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, #8354f8b4, #c1327a98);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 8rem 0 8rem 24rem; /* Towards center-left of screen */
+    animation: fadeInLeft 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
+.skills h2 {
+    font-family: "Audiowide", monospace, sans-serif;
+    color: #ffff;
+    margin-bottom: 16px;
+    font-size: 32px;
+    transition: transform 0.3s ease;
+}
+
+.skills-grid {
+    list-style: circle inside;
+    transition: transform 0.3s ease;
+}
+
+.skills-grid li {
+    color: #ffff;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.skills:hover h2{
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.skills:hover ul{
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+
+/* 
+///////////////////////////////////////////
+/////////////// Hobbies ////////////////////
+///////////////////////////////////////////
+*/
+
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, #8354f8b4, #c1327a98);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 8rem 0 8rem 84rem; /* Towards center-right of screen */
+    animation: fadeInRight 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
+
+.hobbies img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+}
+
+.hobbies h2 {
+    font-family: "Audiowide", monospace, sans-serif;
+    color: #ffff;
+    transition: transform 0.3s ease;
+}
+
+
+.hobbies p {
+    color: #ffff;
+    margin: 0 2rem;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.hobbies:hover p {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.hobbies:hover h2 {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.hobbies:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+
+
+
+/* 
+///////////////////////////////////////////
+/////////////// Journey ///////////////////
+///////////////////////////////////////////
+*/
+
+.journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    animation: fadeInRight 1.5s ease-out;
+    animation-delay: 1.0s; /* Start the animation slightly later than nav a */
+    opacity: 0;
+    animation-fill-mode: forwards; 
+}
+
+.journey p {
+    color: #ffff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.journey h2 {
+    transition: transform 0.3s ease;
+}
+
+.journey h3 {
+    transition: transform 0.3s ease;
+}
+
+.journey img {
+    transition: transform 0.3s ease;
+}
+
+.journey:hover p {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.journey:hover h2 {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.journey:hover h3 {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.journey:hover img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the cards */
+    background: linear-gradient(to top, #8354f8b4, #c1327a98);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Space between the cards */
+    width: 2000px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
+}
+
+
+.timeline-header {
+    color: #ffff;
+}
+
+
+.timeline-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center the cards */
+    gap: 4rem; /* Space between the cards */
+    color: #ffff;
+}
+
+
+.timeline-body img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+/* 
+///////////////////////////////////////////
+/////////////// Get in Touch //////////////
+///////////////////////////////////////////
+*/
+
+
+.call-to-action p {
+    font-size: 20px;
+    margin: 1rem auto;
+}
+
+
+.call-to-action .btn {
+    display: inline-block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #f56a6a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+

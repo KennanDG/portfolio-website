@@ -27,6 +27,10 @@ p#projects-page {
   gap: 4rem; /* Add spacing between cards */
   margin: 100px auto;
   max-width: 900px; 
+  animation: fadeInBottom 1.5s ease-out;
+  animation-delay: 1.5s; 
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 

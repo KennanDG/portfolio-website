@@ -13,9 +13,9 @@
         >
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap">
     </head>
-    <body>
+    <body id="about-page">
         <header>
-            <h1 class="text-center">About Me</h1>
+            <h1 id="title" class="text-center">About Me</h1>
             <nav class="mb-4">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Me</a>
@@ -23,10 +23,76 @@
                 <a href="contact.html">Contact</a>
             </nav>
         </header>
-        <div>
-            <h2>About Me</h2>
-            <p>Details about you go here!</p>
+
+        <section class="introduction text-center">
+        <h1 id="about-page">Welcome!</h1>
+        <p id="about-page">
+            Hi! I'm Kennan deAngelo Gauthier, a Computer Science student with
+            a concentration in Artificial Intelligence. I have a passion for 
+            building innovative applications, robotics, and creating 
+            immersive digital experiences. Keep reading to learn more about me!
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul class="skills-grid">
+            <li>Programming Languages: Python, JavaScript, Kotlin, C++</li>
+            <li>Frameworks & Tools: Pandas, MySQL, Scikit-learn</li>
+            <li>Web Development: HTML, CSS, Node.Js</li>
+            <li>IDE: Visual Studio, VS Code, IntelliJ</li>
+            <li>Soft Skills: Problem-Solving, Team Collaboration, Project management</li>
+        </ul>
+    </section>
+
+    <section class="hobbies text-center">
+        <h2>Hobbies & Interests</h2>
+        <img src="images/boxing_pic.PNG" alt="Boxing picture">
+        <p>
+            When I'm not coding, I enjoy 3D printing, gaming, and exploring creative
+            DIY projects. Before I got into computer science, I was an amatuer boxer
+            and I even won the 2019 Florida Golden Gloves. I am quite passionate about
+            health and fitness, especially when it comes to boxing. I hope to compete
+            again one day once I finish school.
+        </p>
+    </section>
+
+    <section class="journey">
+        <div class="timeline">
+            <div class="timeline-header text-center">
+                <h2>My Journey</h2>
+            </div>
+            <div class="timeline-body">
+                <div class="timeline-item text-center">
+                    <h3>2023</h3>
+                    <img src="images/full-sail-campus.jpg" alt="Full Sail University">
+                    <p>
+                        Started by coding journey by enrolling at Full Sail University 
+                        studying Computer Science.
+                    </p>
+                </div>
+                <div class="timeline-item text-center">
+                    <h3>2024</h3>
+                    <img src="images/graduation_pic.JPG" alt="Graduation">
+                    <p>Graduated with an AS in Computer Science from Full Sail University.</p>
+                </div>
+                <div class="timeline-item text-center">
+                    <h3>2025</h3>
+                    <img src="images/robot_arm.jpg" alt="Robot Arm">
+                    <p>Currently studying Deep Learning and exploring advanced robotics concepts.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <section class="call-to-action text-center mt-4">
+        <h1>Let's Get In Touch</h1>
+        <p>Want to collaborate or learn more about my work?</p>
+        <a href="contact.html" class="btn">Reach out to me!</a>
+        <p>Don't forget to check out what I've been working on.</p>
+        <a href="projects.html" class="btn">View Projects</a>
+    </section>
+
         <footer class="text-center mt-16">
             <p>&copy; 2024 Your Name</p>
         </footer>

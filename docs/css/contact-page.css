@@ -4,7 +4,6 @@ section#contact-section {
     justify-content: center;
     align-items: center;
     min-height: 64vh;
-    /*background: linear-gradient(to right, #7d45ba, #f56a6a); */
     animation: fadeInBottom 1.5s ease-out;
     animation-delay: 1.5s; 
     opacity: 0;
