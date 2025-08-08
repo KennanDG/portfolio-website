@@ -36,6 +36,13 @@ p#about-page {
     margin: 1rem auto;
 }
 
+.skills-hobbies-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* 
 ///////////////////////////////////////////
@@ -52,8 +59,8 @@ p#about-page {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 800px;
-    margin: 8rem 0 8rem 24rem; /* Towards center-left of screen */
+    width: 100vw;
+    max-width: 800px;
     animation: fadeInLeft 1.5s ease-out;
     animation-delay: 1.0s; /* Start the animation slightly later than nav a */
     opacity: 0;
@@ -105,7 +112,7 @@ p#about-page {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 800px;
-    margin: 8rem 0 8rem 78rem; /* Towards center-right of screen */
+    margin: 8rem 0; /* Towards center-right of screen */
     animation: fadeInRight 1.5s ease-out;
     animation-delay: 1.0s; /* Start the animation slightly later than nav a */
     opacity: 0;
