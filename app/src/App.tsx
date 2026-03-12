@@ -1,21 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
 import { SiteLayout } from './components/layout/Site';
-// import { HomePage } from './pages/Home';
-// import { AboutPage } from './pages/About';
-// import { ProjectsPage } from './pages/Projects';
-// import { ContactPage } from './pages/Contact';
+import { HomePage } from './pages/Home';
+import { AboutPage } from './pages/About';
+import { ProjectsPage } from './pages/Projects';
+import { ContactPage } from './pages/Contact';
 
-function App() {
+const App = () => {
 
   return (
     <SiteLayout>
       <p>Test</p>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-      </Routes> */}
+      </Routes>
     </SiteLayout>
   )
 }
