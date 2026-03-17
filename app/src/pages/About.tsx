@@ -36,63 +36,82 @@ const timeline = [
 
 export const AboutPage = () => {
   return (
-    <section className="page about-page">
-      <h1 className="page-title">About Me</h1>
-
-      <section className="introduction">
-        <h2>Welcome!</h2>
-        <p>
+    <section className="page-shell space-y-12">
+      <header className="space-y-4 text-center">
+        <h1 className="section-title">About Me</h1>
+        <p className="mx-auto max-w-3xl section-copy">
           Hi! I'm Kennan deAngelo Gauthier, a Computer Science student with a concentration
-          in Artificial Intelligence. I have a passion for building innovative applications,
-          robotics, and creating immersive digital experiences.
+          in Artificial Intelligence. I enjoy building innovative applications, robotics,
+          and immersive digital experiences.
         </p>
-      </section>
+      </header>
 
-      <div className="skills-hobbies-container">
-        <section className="skills">
-          <h2>Skills</h2>
-          <ul className="skills-grid">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <section className="card-shell p-6 sm:p-8">
+          <h2 className="mb-4 text-2xl font-semibold text-teal-300">Skills</h2>
+          <ul className="grid gap-3 text-sm text-slate-300 sm:text-base">
             {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
+              <li key={skill} className="rounded-xl border border-slate-700 bg-slate-800/60 p-4">
+                {skill}
+              </li>
             ))}
           </ul>
         </section>
 
-        <section className="hobbies">
-          <h2>Hobbies & Interests</h2>
-          <img src="/images/boxing_pic.PNG" alt="Boxing" />
-          <p>
-            When I'm not coding, I enjoy 3D printing, gaming, and exploring creative DIY
-            projects. Before I got into computer science, I was an amateur boxer and won
-            the 2019 Florida Golden Gloves.
+        <section className="card-shell p-6 sm:p-8">
+          <h2 className="mb-4 text-2xl font-semibold text-teal-300">Hobbies & Interests</h2>
+          <img
+            src="/images/boxing_pic.PNG"
+            alt="Boxing"
+            className="mb-4 aspect-[4/3] w-full rounded-xl object-cover"
+          />
+          <p className="section-copy">
+            When I'm not coding, I enjoy 3D printing, gaming, and creative DIY projects.
+            Before I got into computer science, I was an amateur boxer and won the 2019
+            Florida Golden Gloves.
           </p>
         </section>
       </div>
 
-      <section className="journey">
-        <h2>My Journey</h2>
-        <div className="timeline-body">
+      <section className="space-y-6">
+        <h2 className="text-center text-2xl font-semibold text-teal-300 sm:text-3xl">
+          My Journey
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-3">
           {timeline.map((item) => (
-            <div key={item.year} className="timeline-item">
-              <h3>{item.year}</h3>
-              <img src={item.imageSrc} alt={item.imageAlt} />
-              <p>{item.description}</p>
-            </div>
+            <article key={item.year} className="card-shell overflow-hidden">
+              <img
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="space-y-3 p-5">
+                <h3 className="text-xl font-bold text-cyan-300">{item.year}</h3>
+                <p className="text-sm leading-6 text-slate-300">{item.description}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="call-to-action">
-        <h2>Let's Get In Touch</h2>
-        <p>Want to collaborate or learn more about my work?</p>
-        <Link to="/contact" className="btn">
-          Reach out to me!
-        </Link>
-        <p>Don't forget to check out what I've been working on.</p>
-        <Link to="/projects" className="btn">
-          View Projects
-        </Link>
+      <section className="card-shell space-y-4 p-6 text-center sm:p-8">
+        <h2 className="text-2xl font-semibold text-teal-300">Let&apos;s Get In Touch</h2>
+        <p className="section-copy">Want to collaborate or learn more about my work?</p>
+
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link to="/contact" className="button-primary">
+            Reach out to me
+          </Link>
+          <Link to="/projects" className="button-secondary">
+            View Projects
+          </Link>
+        </div>
       </section>
     </section>
   );
-}
+};
+
+
+
+

@@ -57,15 +57,20 @@ export const projects: Project[] = [
 
 
 export const ProjectsPage = () => {
-    return (
-    <section className="page projects-page">
-        <h1 className="page-title">Projects</h1>
+  return (
+    <section className="page-shell space-y-8">
+        <div className="text-center">
+            <h1 className="section-title">Projects</h1>
+            <p className="mx-auto mt-3 max-w-2xl section-copy">
+                A selection of projects spanning AI, mobile development, simulation, and software engineering.
+            </p>
+        </div>
 
-        <section className="projects-container">
-        {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-        ))}
+        <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+            ))}
         </section>
     </section>
-    );
-}
+  );
+};

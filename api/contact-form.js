@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
                 null,
                 {
                     params: {
-                        secret: process.env.RECAPTCHA_SECRET_KEY, // Your secret key
+                        secret: process.env.RECAPTCHA_SECRET_KEY, 
                         response: captcha,
                     },
                 }

@@ -9,7 +9,6 @@ const App = () => {
 
   return (
     <SiteLayout>
-      <p>Test</p>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

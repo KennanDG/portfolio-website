@@ -29,26 +29,46 @@ const cards = [
 
 export const HomePreviewCards = () => {
   return (
-    <section className="home-preview-cards">
+    <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {cards.map((card) => (
-        <article key={card.title} className="home-card">
-          {card.type === 'image' ? (
-            <img src={card.imageSrc} alt={card.title} />
-          ) : (
-            <div className="home-video-container">
-              <video autoPlay loop muted playsInline>
-                <source src={card.videoSrc} type="video/mp4" />
-              </video>
-            </div>
-          )}
+        <article
+          key={card.title}
+          className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 shadow-lg transition duration-300 hover:-translate-y-1"
+        >
+          <div className="overflow-hidden">
+            {card.type === 'image' ? (
+              <img
+                src={card.imageSrc}
+                alt={card.title}
+                className="aspect-4/5 w-full object-cover transition duration-500 hover:scale-105"
+              />
+            ) : (
+              <div className="aspect-4/5 w-full overflow-hidden">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                >
+                  <source src={card.videoSrc} type="video/mp4" />
+                </video>
+              </div>
+            )}
+          </div>
 
-          <h3>{card.title}</h3>
-          <p>{card.description}</p>
-          <Link to={card.to} className="btn">
-            {card.buttonText}
-          </Link>
+          <div className="space-y-3 p-5">
+            <h3 className="text-xl font-semibold text-white">{card.title}</h3>
+            <p className="text-sm leading-6 text-slate-300">{card.description}</p>
+            <Link
+              to={card.to}
+              className="inline-flex items-center justify-center rounded-xl bg-teal-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-teal-400"
+            >
+              {card.buttonText}
+            </Link>
+          </div>
         </article>
       ))}
     </section>
   );
-}
+};

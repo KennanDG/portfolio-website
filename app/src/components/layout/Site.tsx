@@ -8,12 +8,12 @@ type Props = {
 
 export function SiteLayout({ children }: Props) {
   return (
-    <>
-        <Navbar />
-        <main>
-            {children}
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <Navbar />
+        <main className="flex-1">
+          {children}
         </main>
-        <Footer />
-    </>
+      <Footer />
+    </div>
   );
 }
