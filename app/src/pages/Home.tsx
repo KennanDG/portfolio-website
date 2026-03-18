@@ -11,10 +11,6 @@ export const HomePage = () => {
         <h1 className="section-title">
           The Greatest Site Ever
         </h1>
-        {/* <p className="mx-auto max-w-2xl section-copy">
-        I’m Kennan Gauthier, a developer focused on AI, software engineering,
-        and interactive digital experiences.
-        </p> */}
       </div>
 
       <HomePreviewCards />
