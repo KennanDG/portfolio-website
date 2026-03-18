@@ -1,4 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 type ContactFormState = {
     name: string;
@@ -19,6 +21,8 @@ export const ContactForm = () => {
     const [responseMessage, setResponseMessage] = useState('');
     const [isError, setIsError] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
     const maxLength = 1000;
     const charCount = form.message.length;
@@ -45,6 +49,12 @@ export const ContactForm = () => {
             return;
         }
 
+        if (import.meta.env.PROD && !captchaToken) {
+            setIsError(true);
+            setResponseMessage('Please complete the reCAPTCHA.');
+            return;
+        }
+
         setIsSubmitting(true);
         setResponseMessage('');
         setIsError(false);
@@ -53,7 +63,10 @@ export const ContactForm = () => {
             const response = await fetch('/api/contact-form', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    ...form,
+                    captchaToken,
+                }),
             });
 
             const result = await response.json();
@@ -156,6 +169,12 @@ export const ContactForm = () => {
                 required
                 />
             </div>
+
+            {/* <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                onChange={(token) => setCaptchaToken(token)}
+            /> */}
 
             <button
                 type="submit"
