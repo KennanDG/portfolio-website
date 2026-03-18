@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 
 const skills = [
-  'Programming Languages: Python, JavaScript, Kotlin, C++',
-  'Frameworks & Tools: Pandas, MySQL, Scikit-learn',
-  'Web Development: HTML, CSS, Node.js',
-  'IDE: Visual Studio, VS Code, IntelliJ',
-  'Soft Skills: Problem-Solving, Team Collaboration, Project Management',
+  'Languages:    Python, TypeScript, JavaScript, PL/SQL, C++',
+  'AI:    Scikit-learn, Pytorch, Tensorflow, NumPy, YOLO, RAG, Vector Databases, LangChain, OpenAI Gymnasium',
+  'Backend:    FastAPI, Django, SQLAlchemy, Alembic, Oracle DB',
+  'ERP:    Frappe, Quantum',
+  'DevOps:    AWS, Terraform, Docker, CI/CD',
+  'Frontend:    React, Tailwind, Node.js, Oracle APEX',
 ];
 
 const timeline = [
@@ -20,14 +21,20 @@ const timeline = [
   {
     year: '2024',
     imageSrc: '/images/graduation_pic.JPG',
-    imageAlt: 'Graduation',
-    description: 'Graduated with an AS in Computer Science from Full Sail University.',
+    imageAlt: 'Associate\'s graduation',
+    description: 'Graduated with an AS in Computer Science.',
   },
   {
     year: '2025',
-    imageSrc: '/images/robot_arm.jpg',
+    imageSrc: '/images/full-sail-campus.jpg',
+    imageAlt: 'Bachelor\'s graduation',
+    description: 'Started an internship and graduated with my bachelor\'s degree.',
+  },
+  {
+    year: '2026',
+    imageSrc: '/images/gat_logo.png',
     imageAlt: 'Robot Arm',
-    description: 'Currently studying Deep Learning and exploring advanced robotics concepts.',
+    description: 'Got hired by GA Telesis full-time as a Software Developer.',
   },
 ];
 
@@ -39,16 +46,17 @@ export const AboutPage = () => {
     <section className="page-shell space-y-12">
       <header className="space-y-4 text-center">
         <h1 className="section-title">About Me</h1>
-        <p className="mx-auto max-w-3xl section-copy">
-          Hi! I'm Kennan deAngelo Gauthier, a Computer Science student with a concentration
-          in Artificial Intelligence. I enjoy building innovative applications, robotics,
-          and immersive digital experiences.
+        <p className="mx-auto max-w-4xl section-copy">
+          Hi! I'm Kennan deAngelo Gauthier, a Full Sail University alumni that graduated with
+          a Computer Science degree with a concentration in Artificial Intelligence. 
+          I have a passion for anime, video games, and robotics. I have full-stack development
+          experience; and I am actively working on new projects and building software solutions. 
         </p>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="card-shell p-6 sm:p-8">
-          <h2 className="mb-4 text-2xl font-semibold text-teal-300">Skills</h2>
+          <h2 className="mb-4 text-2xl text-center font-semibold text-teal-300">Skills</h2>
           <ul className="grid gap-3 text-sm text-slate-300 sm:text-base">
             {skills.map((skill) => (
               <li key={skill} className="rounded-xl border border-slate-700 bg-slate-800/60 p-4">
@@ -59,15 +67,15 @@ export const AboutPage = () => {
         </section>
 
         <section className="card-shell p-6 sm:p-8">
-          <h2 className="mb-4 text-2xl font-semibold text-teal-300">Hobbies & Interests</h2>
+          <h2 className="mb-4 text-2xl text-center font-semibold text-teal-300">Hobbies & Interests</h2>
           <img
             src="/images/boxing_pic.PNG"
             alt="Boxing"
-            className="mb-4 aspect-[4/3] w-full rounded-xl object-cover"
+            className="mb-4 aspect-4/3 w-full rounded-xl object-cover"
           />
           <p className="section-copy">
-            When I'm not coding, I enjoy 3D printing, gaming, and creative DIY projects.
-            Before I got into computer science, I was an amateur boxer and won the 2019
+            When I'm not coding, I enjoy spending time with friends and family, playing video games, 
+            and working out.v Before I got into computer science, I was an amateur boxer and won the 2019
             Florida Golden Gloves.
           </p>
         </section>
@@ -84,7 +92,7 @@ export const AboutPage = () => {
               <img
                 src={item.imageSrc}
                 alt={item.imageAlt}
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-4/3 w-full object-cover"
               />
               <div className="space-y-3 p-5">
                 <h3 className="text-xl font-bold text-cyan-300">{item.year}</h3>
