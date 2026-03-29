@@ -1,23 +1,13 @@
 {
-  "version": 2,
-  "builds": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
-      "src": "api/contact-form.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "src": "docs/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/contact-form",
-      "dest": "/api/contact-form.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/docs/$1"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
