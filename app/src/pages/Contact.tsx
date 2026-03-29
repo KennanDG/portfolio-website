@@ -21,7 +21,7 @@ export const ContactPage = () => {
 
                     <div className="mt-8 flex flex-wrap gap-4">
                         <a
-                            href="https://github.com/KennanDG/portfolio-website"
+                            href="https://github.com/KennanDG/"
                             target="_blank"
                             rel="noreferrer"
                             className="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-slate-900/60 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-300"

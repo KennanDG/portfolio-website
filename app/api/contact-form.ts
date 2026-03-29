@@ -1,4 +1,7 @@
 import nodemailer from 'nodemailer'; 
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 type ContactRequestBody = {
   name?: string;
@@ -8,7 +11,23 @@ type ContactRequestBody = {
   captchaToken?: string;
 };
 
-export default async function handler(req: any, res: any) {
+dotenv.config();
+
+// console.log(process.env.RECAPTCHA_SECRET_KEY);
+// console.log(process.env.EMAIL_PASSWORD);
+// console.log(process.env.EMAIL);
+
+
+const app = express();
+const port = 3001;
+
+app.use(cors());
+app.use(express.json());
+
+
+
+app.post('/api/contact', async (req, res) => {
+
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed.' });
   }
@@ -79,8 +98,15 @@ ${message}
     });
 
     return res.status(200).json({ message: 'Email sent successfully.' });
+
   } catch (error) {
     console.error('contact-form error:', error);
     return res.status(500).json({ message: 'Internal server error.' });
   }
-}
+
+});
+
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});

@@ -23,6 +23,8 @@ export const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const recaptchaRef = useRef<ReCAPTCHA | null>(null);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const recaptchaEnabled = Boolean(recaptchaSiteKey);
 
     const maxLength = 1000;
     const charCount = form.message.length;
@@ -49,7 +51,7 @@ export const ContactForm = () => {
             return;
         }
 
-        if (import.meta.env.PROD && !captchaToken) {
+        if (import.meta.env.PROD && recaptchaEnabled && !captchaToken) {
             setIsError(true);
             setResponseMessage('Please complete the reCAPTCHA.');
             return;
@@ -60,16 +62,18 @@ export const ContactForm = () => {
         setIsError(false);
 
         try {
-            const response = await fetch('/api/contact-form', {
+            const response = await fetch('http://localhost:3001/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...form,
-                    captchaToken,
+                    captchaToken
                 }),
             });
 
             const result = await response.json();
+
+            console.log('result:', result);
 
             if (!response.ok) {
                 throw new Error(result.message || 'Something went wrong.');
@@ -170,11 +174,17 @@ export const ContactForm = () => {
                 />
             </div>
 
-            {/* <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                onChange={(token) => setCaptchaToken(token)}
-            /> */}
+            {recaptchaSiteKey ? (
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={recaptchaSiteKey}
+                    onChange={(token) => setCaptchaToken(token)}
+                />
+                ) : (
+                <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
+                    reCAPTCHA is not configured yet.
+                </div>
+            )}
 
             <button
                 type="submit"
