@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'; 
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+// import express from 'express';
+// import cors from 'cors';
+// import dotenv from 'dotenv';
 
 type ContactRequestBody = {
   name?: string;
@@ -11,18 +11,18 @@ type ContactRequestBody = {
   captchaToken?: string;
 };
 
-dotenv.config();
+// dotenv.config();
 
 // console.log(process.env.RECAPTCHA_SECRET_KEY);
 // console.log(process.env.EMAIL_PASSWORD);
 // console.log(process.env.EMAIL);
 
 
-const app = express();
-const port = 3001;
+// const app = express();
+// const port = 3001;
 
-app.use(cors());
-app.use(express.json());
+// app.use(cors());
+// app.use(express.json());
 
 
 
