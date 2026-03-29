@@ -26,7 +26,7 @@ app.use(express.json());
 
 
 
-app.post('/api/contact', async (req, res) => {
+export const handler = async (req: any, res: any) => {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed.' });
@@ -104,9 +104,4 @@ ${message}
     return res.status(500).json({ message: 'Internal server error.' });
   }
 
-});
-
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+};
