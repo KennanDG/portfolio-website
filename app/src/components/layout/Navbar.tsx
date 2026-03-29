@@ -4,6 +4,7 @@ const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Me' },
   { to: '/projects', label: 'Projects' },
+  { to: '/rag-demo', label: 'RAG Demo' },
   { to: '/contact', label: 'Contact' },
 ];
 

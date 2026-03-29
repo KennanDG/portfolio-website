@@ -4,6 +4,16 @@ import { type Project } from '../components/projects/ProjectCard';
 
 export const projects: Project[] = [
     {
+    title: 'RAG API Demo',
+    description:
+    'A chatbot-style frontend connected to my retrieval-augmented generation pipeline, using a secure Vercel proxy and markdown-rendered responses.',
+    href: '/rag-demo',
+    buttonText: 'Open Demo',
+    mediaType: 'image',
+    mediaSrc: '/images/robot_arm.jpg',
+    mediaAlt: 'RAG API Demo',
+    },
+    {
     title: 'Speech-to-Image-Classifier',
     description: "Speech-to-Image-Classifier is an iOS mobile application that utilizes object tracking and voice recognition technology to allow users to dynamically detect objects based on their verbal command.",
     href: 'https://github.com/KennanDG/portfolio-website',
