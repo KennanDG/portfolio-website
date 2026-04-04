@@ -10,7 +10,7 @@ export const projects: Project[] = [
     href: '/rag-demo',
     buttonText: 'Open Demo',
     mediaType: 'image',
-    mediaSrc: '/images/robot_arm.jpg',
+    mediaSrc: '/images/rag_demo.jpg',
     mediaAlt: 'RAG API Demo',
     },
     {

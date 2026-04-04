@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 type Message = {
@@ -15,8 +15,15 @@ export const RagDemoPage = () => {
     {
       id: crypto.randomUUID(),
       role: 'assistant',
-      content:
-        "Hello! this is a live demo of my RAG pipeline. Ask a question and I'll return a grounded response from the API.",
+      content: `Hi! This is a live demo of my custom **Retrieval-Augmented Generation (RAG)** pipeline.
+
+## Here is how the architecture works under the hood:
+1. **Ingestion**: Documents (like text or PDFs) are embedded into deterministic chunks using a Jina AI embedding model.
+2. **Storage**: Embeddings are stored in a **Qdrant** vector database, while AWS S3 buckets acts as the source of truth for metadata and ensures idempotency by using a DynamoDB lock table.
+3. **Retrieval**: When you ask a question, the pipeline searches Qdrant for the most relevant context.
+4. **Generation**: An agent powered by LangGraph uses *only* that retrieved context to generate a grounded, accurate answer.
+
+Ask me anything about robotics, AI, or software engineering!`
     },
   ]);
 
@@ -25,6 +32,7 @@ export const RagDemoPage = () => {
   const [error, setError] = useState<string | null>(null);
 
   const formRef = useRef<HTMLFormElement | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const canSubmit = useMemo(() => input.trim().length > 0 && !isLoading, [input, isLoading]);
 
@@ -45,6 +53,11 @@ export const RagDemoPage = () => {
 
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
+
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+    }
+
     setIsLoading(true);
 
     try {
@@ -60,6 +73,9 @@ export const RagDemoPage = () => {
         throw new Error(data.error || 'Failed to fetch response from RAG API.');
       }
 
+      console.log('AI response: ', data.answer);
+      console.log('meta:', data.meta);
+
       const assistantMessage: Message = {
         id: crypto.randomUUID(),
         role: 'assistant',
@@ -72,6 +88,8 @@ export const RagDemoPage = () => {
         err instanceof Error ? err.message : 'Something went wrong while calling the RAG API.';
 
       setError(message);
+
+      console.log(err);
 
       setMessages((prev) => [
         ...prev,
@@ -86,6 +104,31 @@ export const RagDemoPage = () => {
       setIsLoading(false);
     }
   };
+
+
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); // Prevent the default new line behavior
+      if (canSubmit && formRef.current) {
+        // Trigger native form submission
+        formRef.current.requestSubmit();
+      }
+    }
+  };
+
+
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+    
+    // Auto-resize
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto'; 
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 160)}px`;
+    }
+  };
+
 
   return (
     <section className="page-shell">
@@ -123,10 +166,47 @@ export const RagDemoPage = () => {
                     {message.content}
                   </p>
                 ) : (
-                  <div className="prose prose-invert max-w-none prose-p:leading-7 prose-pre:overflow-x-auto prose-code:text-cyan-300">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  // <div className="prose prose-invert max-w-none prose-p:leading-7 prose-pre:overflow-x-auto prose-code:text-cyan-300">
+                  //   <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  //     {message.content}
+                  //   </ReactMarkdown>
+                  // </div>
+                  <div className="w-full">
+                    <Markdown 
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        // Headings
+                        h1: ({node, ...props}) => <h1 className="mt-6 mb-4 text-2xl font-bold text-cyan-300" {...props} />,
+                        h2: ({node, ...props}) => <h2 className="mt-5 mb-3 text-xl font-bold text-cyan-300" {...props} />,
+                        h3: ({node, ...props}) => <h3 className="mt-4 mb-2 text-lg font-bold text-cyan-300" {...props} />,
+                        // Paragraphs
+                        p: ({node, ...props}) => <p className="mb-4 leading-7 last:mb-0" {...props} />,
+                        // Lists
+                        ul: ({node, ...props}) => <ul className="mb-4 list-disc space-y-2 pl-6 marker:text-teal-500" {...props} />,
+                        ol: ({node, ...props}) => <ol className="mb-4 list-decimal space-y-2 pl-6 marker:text-teal-500" {...props} />,
+                        li: ({node, ...props}) => <li className="leading-7" {...props} />,
+                        // Emphasis
+                        strong: ({node, ...props}) => <strong className="font-semibold text-teal-400" {...props} />,
+                        // Code blocks & inline code
+                        code: ({node, className, children, ...props}: any) => {
+                          const match = /language-(\w+)/.exec(className || '');
+                          const isInline = !match && !className?.includes('language-');
+                          return !isInline ? (
+                            <pre className="my-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4">
+                              <code className={className} {...props}>
+                                {children}
+                              </code>
+                            </pre>
+                          ) : (
+                            <code className="rounded-md bg-slate-800 px-1.5 py-0.5 font-mono text-sm text-cyan-300" {...props}>
+                              {children}
+                            </code>
+                          );
+                        }
+                      }}
+                    >
                       {message.content}
-                    </ReactMarkdown>
+                    </Markdown>
                   </div>
                 )}
               </div>
@@ -156,11 +236,13 @@ export const RagDemoPage = () => {
 
             <textarea
               id="rag-question"
+              ref={textareaRef}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
               placeholder="Ask something about robotics, AI, or software engineering..."
               rows={1}
-              className="min-h-14 flex-1 resize-none rounded-2xl border border-slate-700 bg-slate-900 px-4 py-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 sm:text-base"
+              className="min-h-14 flex-1 resize-none rounded-2xl border border-slate-700 bg-slate-900 px-4 py-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 sm:text-base [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             />
 
             <button
