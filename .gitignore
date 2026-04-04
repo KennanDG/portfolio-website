@@ -29,3 +29,5 @@ build/
 
 # Git-specific files
 *.orig
+
+.vercel/
