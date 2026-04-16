@@ -1,6 +1,6 @@
 const RAG_API_URL =
   process.env.RAG_API_URL ||
-  'http://ai-agents-dev-alb-1116296248.us-east-1.elb.amazonaws.com/v1/rag/query';
+  'https://eqrd9vw8q0.execute-api.us-east-1.amazonaws.com/v1/rag/query';
 
   
 
